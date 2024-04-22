@@ -57,7 +57,7 @@ if ($form->is_cancelled()) {
     $data->notloggedinuser = (!$user);
     $message = $renderer->render_from_template('user/contact_site_support_email_body', $data);
 
-    if (!email_to_user(core_user::get_support_user(), $from, $subject, $message)) {
+    if (!email_to_user(core_user::get_support_user(), $from, $subject, $message, '', '', '', true, $data->email, $data->name)) {
         $supportemail = $CFG->supportemail;
         $form->set_data($data);
         $templatectx = [
