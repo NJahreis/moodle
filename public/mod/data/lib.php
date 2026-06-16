@@ -704,7 +704,7 @@ class data_field_base {     // Base class for Database Field Types (see field/*/
      */
     public function export_text_value(stdClass $record) {
         if ($this->text_export_supported()) {
-            return $record->content;
+            return !($record->content == null) ? (string) $record->content : '';
         }
         return '';
     }

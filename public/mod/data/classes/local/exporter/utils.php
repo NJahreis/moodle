@@ -113,8 +113,6 @@ class utils {
                             $exporter->add_file_from_string($contents, $field->export_file_value($record));
                         }
                     }
-                    // Just be double sure.
-                    $contents = !empty($contents) ? $contents : '';
                     $exporter->add_to_current_row($contents);
                 }
                 if ($tags) {
